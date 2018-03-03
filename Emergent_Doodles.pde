@@ -1,4 +1,4 @@
-Ant ant;
+Doodler doodler;
 
 int gridsize = 20;
 color b = color(44,108,175);
@@ -12,12 +12,12 @@ void setup(){
   Rule[] ruleset = new Rule[2];
 ruleset[0] = new Rule("[F][F+]");
 ruleset[1] = new Rule("[-F][+F]");
-  ant = new Ant(startPos,ruleset,gridsize);  
+  doodler = new Doodler(startPos,ruleset,gridsize);  
 }
 
 void draw(){  
-  ant.render();
-  ant.calculate();
+  doodler.render();
+  doodler.calculate();
   //delay(100);
   //noLoop();
   //saveFrame("frame-#####.png");
@@ -28,12 +28,12 @@ void mousePressed(){
 } 
 
 void keyPressed(){
- ant.calculate();
+ doodler.calculate();
  redraw();
 }
 
 void selfclick(){
-  ant.calculate();
+  doodler.calculate();
   redraw();
 } 
 
